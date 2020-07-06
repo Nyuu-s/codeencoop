@@ -14,11 +14,14 @@ import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 @ObjectHolder(NyuulsonCore.MODID)
 public class NyuulsonRegistrer {
 	
+	///////// Register blocks //////////
 	@SubscribeEvent
 	public static void registerBlocks(Register<Block> event) {
 		event.getRegistry().register(NyuulsonCore.BLOCK_BATTERY);
 	}
 	
+	
+	//////// Register items & items from block ////////////
 	@SubscribeEvent
 	public static void registerItems(Register<Item> event) {
 		Item blockBatteryItem = new ItemBlock(NyuulsonCore.BLOCK_BATTERY).setRegistryName(NyuulsonCore.BLOCK_BATTERY.getRegistryName());

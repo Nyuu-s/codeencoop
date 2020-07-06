@@ -1,13 +1,17 @@
 package nyuulson.nyuulsoncore;
 
 import net.minecraft.block.Block;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
 import org.apache.logging.log4j.Logger;
 
 import nyuulson.nyuulsoncore.blocks.BlockBattery;
+import nyuulson.nyuulsoncore.blocks.tileentity.TileEntityBattery;
 
 @Mod(modid = NyuulsonCore.MODID, name = NyuulsonCore.NAME, version = NyuulsonCore.VERSION)
 public class NyuulsonCore
@@ -31,5 +35,9 @@ public class NyuulsonCore
     {
         // some example code
         logger.info("Nyuulson Core initialized");
+      
+        ///// Register tile entities /////////
+        
+        GameRegistry.registerTileEntity(TileEntityBattery.class, NyuulsonCore.BLOCK_BATTERY.getRegistryName());
     }
 }
