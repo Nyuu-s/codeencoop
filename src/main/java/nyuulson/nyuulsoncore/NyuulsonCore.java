@@ -21,7 +21,7 @@ public class NyuulsonCore
     
     public static final Block BLOCK_BATTERY = new BlockBattery();
 
-    private static Logger logger;
+    public static Logger logger;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)

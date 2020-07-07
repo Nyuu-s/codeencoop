@@ -2,6 +2,7 @@ buildscript {
     repositories {
         jcenter()
         maven { url = "http://files.minecraftforge.net/maven" }
+        
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
@@ -9,6 +10,20 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+repositories {
+	maven {
+        name = "CoFH Maven"
+        url = "http://maven.covers1624.net"
+    }
+    maven {
+		name = "JEI Maven"
+		url = "https://dvs1.progwml6.com/files/maven"
+	}
+}
 
 
 version = "1.0"
@@ -54,6 +69,10 @@ dependencies {
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    
+    compile "cofh:RedstoneFlux:${rf_mc_version}-${rf_version}:deobf"
+    deobfCompile "cofh:CoFHCore:${mc_version}-${cofh_core_version}:universal"
+    compile "mezz.jei:jei_${jei_mc_version}:${jei_version}"
 
 }
 
